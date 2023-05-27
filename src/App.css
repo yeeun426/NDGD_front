@@ -1,6 +1,12 @@
 body {
-  margin: 0px;
-  font-family: 'Pretendard';
+    margin: 0px;
+    font-family: 'Pretendard-Thin';
+}
+
+button {
+  border: none;
+  font-family: 'Pretendard-Thin';
+  cursor: pointer;
 }
 
 @font-face {

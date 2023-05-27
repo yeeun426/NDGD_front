@@ -6,12 +6,11 @@ export const HeaderStyled = styled.div `
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
-    height: 65px;
     align-items: center;
 
     .header-left img {
-        border-radius: 60%;
-        height: 65px;
+        border-radius: 50%;
+        height: 55px;
     }
 
     .header-right {
