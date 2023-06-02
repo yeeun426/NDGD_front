@@ -3,6 +3,10 @@ body {
     font-family: 'Pretendard-Thin';
 }
 
+a { 
+  text-decoration: none;
+}
+
 button {
   border: none;
   font-family: 'Pretendard-Thin';

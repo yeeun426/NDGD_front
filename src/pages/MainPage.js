@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import { MainStyled } from "../styles/MainStyled";
-
+import { Link } from 'react-router-dom';
 //swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Autoplay } from "swiper";
@@ -22,7 +22,7 @@ export default function MainPage() {
           spaceBetween={30}
           loop={true}
           autoplay={{
-            delay: 7000,
+            delay: 5000,
             disableOnInteraction: false
           }}
           navigation={true}
@@ -47,10 +47,12 @@ export default function MainPage() {
           <div>NDGD가 제공하는 서비스</div>
           
           <div className = "main-service-btn">
-            <button className = "main-service-items">
-              <img src = "images/process.png" alt="process"/>
-              <div>산재보상절차/신청</div>
-            </button>
+            <Link to = "/procedure">
+              <button className = "main-service-items">
+                <img src = "images/process.png" alt="process"/>
+                <div>산재보상절차/신청</div>
+              </button>
+            </Link>
             <button className = "main-service-items">
               <img src = "images/calculator.png" alt="process"/>
               <div>4대 보험금 모의계산</div>
