@@ -15,7 +15,6 @@ export default function MainPage() {
   return (
     <MainStyled>
         <Header />
-        {/* <div className = "main-banner"></div> */}
         <Swiper
           slidesPerView={1.44}
           centeredSlides={true}
@@ -31,6 +30,9 @@ export default function MainPage() {
         >      
           <SwiperSlide>
             <img src = "images/banner1.png" alt="산업재해"/>
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src = "images/banner1.png" alt="process"/>
           </SwiperSlide>
           <SwiperSlide>
             <img src = "images/banner1.png" alt="process"/>
@@ -59,14 +61,18 @@ export default function MainPage() {
                 <div>4대 보험금 모의계산</div>
               </button>
             </Link>
-            <button className = "main-service-items">
-              <img src = "images/percentage.png" alt="process"/>
-              <div>보험금 승인 확률</div>
-            </button>
-            <button className = "main-service-items">
-              <img src = "images/best.png" alt="process"/>
-              <div>직업훈련 우수 기관</div>
-            </button>
+            <Link to = "/percent">
+              <button className = "main-service-items">
+                <img src = "images/percentage.png" alt="process"/>
+                <div>보험금 승인 확률</div>
+              </button>
+            </Link>
+            <Link to = "/training">
+              <button className = "main-service-items">
+                <img src = "images/best.png" alt="process"/>
+                <div>직업훈련 우수 기관</div>
+              </button>
+            </Link>
             <button className = "main-service-items">
               <img src = "images/medical.png" alt="process"/>
               <div>산재 지정 의료 기관</div>

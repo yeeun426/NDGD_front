@@ -2,12 +2,13 @@ import React from "react";
 import Header from "../components/Header";
 import PageTitle from "../components/PageTitle";
 import { CalculatorStyled } from "../styles/CalculatorStyled";
+import { Link } from 'react-router-dom';
 
 export default function Procedure() {
     return(
         <CalculatorStyled>
             <Header />
-            <PageTitle/>
+            <PageTitle title="Calculator (계산기)" txt = "4대 보험금 모의 계산기입니다."/>
             <div className="calc-wrapper">
                 <div className="calc-txt">재해 발생 당시 정보와 현재 본인의 상황을 입력해주세요.</div>
                 <div className="calc-contents">
@@ -63,13 +64,19 @@ export default function Procedure() {
                 </div>
             </div>
 
-            <div className="calc-button">
-                <button className="calc-button-ways">
-                    산재보험 절차/신청방법<br/>보러가기
-                </button>
+            <div className="calc-buttons">
+                <Link to = "/procedure">
+                    <button className="calc-button-ways">
+                        산재보험 절차/신청방법<br/>보러가기
+                    </button>
+                </Link>
+                <a href = "https://total.comwel.or.kr/" 
+                    target="_blank"
+                    rel="noopener noreferrer">
                 <button className="calc-button-apply">
-                    산재보험 신청 바로가기
+                    고용/산재보험 토탈서비스<br/> 바로가기
                 </button>
+                </a>
             </div>
         </CalculatorStyled>
     )
