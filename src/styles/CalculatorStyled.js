@@ -68,6 +68,7 @@ export const CalculatorStyled = styled.div `
             background: white;
             padding: 0 10px;
             margin: 0;
+            width: 140px;
         }
 
         .calc-price {
@@ -84,7 +85,25 @@ export const CalculatorStyled = styled.div `
         background: #ff8700;
         color: white;
         padding: 15px;
-        border-radius: 20px;
+        border-radius: 15px;
         box-shadow: 2px 2px 2px 2px #0000003b;
+    }
+
+    .calc-button-apply {
+        font-size: 18px;
+        border: 1px solid #ff8700 ;
+        color: #ff8700;
+        padding: 15px;
+        border-radius: 15px;
+        box-shadow: 2px 2px 2px 2px #0000003b;
+    }
+
+    .calc-buttons {
+        width: 55%;
+        margin: auto;
+        display: flex;
+        gap: 100px;
+        justify-content: center;
+        margin-bottom: 60px;
     }
 `
