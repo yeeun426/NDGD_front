@@ -53,10 +53,12 @@ export default function MainPage() {
                 <div>산재보상절차/신청</div>
               </button>
             </Link>
-            <button className = "main-service-items">
-              <img src = "images/calculator.png" alt="process"/>
-              <div>4대 보험금 모의계산</div>
-            </button>
+            <Link to = "/calc">
+              <button className = "main-service-items">
+                <img src = "images/calculator.png" alt="process"/>
+                <div>4대 보험금 모의계산</div>
+              </button>
+            </Link>
             <button className = "main-service-items">
               <img src = "images/percentage.png" alt="process"/>
               <div>보험금 승인 확률</div>

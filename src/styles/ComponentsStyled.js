@@ -1,5 +1,22 @@
 import styled from "styled-components";
 
+export const PageTitleStyled = styled.div `
+    width: 896px;
+    margin: auto;
+    height: 93px;
+    border-bottom: 2px solid #FF8700;
+    margin-top: 15px;
+    
+    .pt-title {
+        font-size: 18px;
+        color: #ff8700;
+    }
+
+    .pt-txt {
+        font-size: 24px;
+    }
+`
+
 export const HeaderStyled = styled.div `
     width: 80%;
     margin: 15px auto 10px;
