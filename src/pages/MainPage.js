@@ -73,14 +73,18 @@ export default function MainPage() {
                 <div>직업훈련 우수 기관</div>
               </button>
             </Link>
-            <button className = "main-service-items">
-              <img src = "images/medical.png" alt="process"/>
-              <div>산재 지정 의료 기관</div>
-            </button>
-            <button className = "main-service-items">
-              <img src = "images/job.png" alt="process"/>
-              <div>직업 재활 기관 현황</div>
-            </button>
+            <Link to = "/job">
+              <button className = "main-service-items">
+                <img src = "images/medical.png" alt="process"/>
+                <div>산재 지정 의료 기관</div>
+              </button>
+            </Link>
+            <Link to = "/rehabilitation">
+              <button className = "main-service-items">
+                <img src = "images/job.png" alt="process"/>
+                <div>직업 재활 기관 현황</div>
+              </button>
+            </Link>
           </div>
         </div>
     </MainStyled>

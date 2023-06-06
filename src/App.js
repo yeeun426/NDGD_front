@@ -5,6 +5,8 @@ import Procedure from './pages/Procedure';
 import Calculator from './pages/Calculator';
 import Percentage from './pages/Percentage';
 import VocationalTraining from './pages/VocationalTraining';
+import MedicalInstitution from './pages/MedicalInstitution';
+import JobInstitution from './pages/JobInstitution';
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
         <Route path="/procedure" element={<Procedure />}></Route>
         <Route path="/calc" element={<Calculator />}></Route>
         <Route path="/percent" element={<Percentage />}></Route>
-        <Route path="/training" element={<VocationalTraining />}></Route>
+        <Route path="/training" element={<VocationalTraining />}></Route>        
+        <Route path="/rehabilitation" element={<MedicalInstitution />}></Route>
+        <Route path="/job" element={<JobInstitution />}></Route>
       </Routes>
     </div>
   );

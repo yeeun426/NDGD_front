@@ -68,3 +68,6 @@ export const AgencyStyled = styled.div `
     }
 
 `
+
+export const TrainingStyled = styled.div `  
+`
