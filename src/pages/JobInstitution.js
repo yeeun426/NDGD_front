@@ -7,7 +7,7 @@ export default function JobInstitution() {
     return(
         <AgencyStyled>
             <Header />
-            <PageTitle title="Institution (기관)" txt = "산재지정 의료 기관입니다."/>
+            <PageTitle title="Institution (기관)" txt = "직업재활 기관 현황입니다."/>
             <div className="agency-wrapper">
                 <div className = "agency-search">
                     <div>검색</div>

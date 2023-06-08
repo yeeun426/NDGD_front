@@ -32,16 +32,16 @@ export default function MainPage() {
             <img src = "images/banner1.png" alt="산업재해"/>
           </SwiperSlide>
           <SwiperSlide>
-            <img src = "images/banner1.png" alt="process"/>
+            <img src = "images/banner2.png" alt="신청절차"/>
           </SwiperSlide>
           <SwiperSlide>
-            <img src = "images/banner1.png" alt="process"/>
+            <img src = "images/banner3.png" alt="커뮤니티"/>
           </SwiperSlide>
           <SwiperSlide>
-            <img src = "images/banner1.png" alt="process"/>
+            <img src = "images/banner4.png" alt="process"/>
           </SwiperSlide>
           <SwiperSlide>
-            <img src = "images/banner1.png" alt="process"/>
+            <img src = "images/banner5.png" alt="process"/>
           </SwiperSlide>
         </Swiper>
 
@@ -73,7 +73,7 @@ export default function MainPage() {
                 <div>직업훈련 우수 기관</div>
               </button>
             </Link>
-            <Link to = "/job">
+            <Link to = "/medical">
               <button className = "main-service-items">
                 <img src = "images/medical.png" alt="process"/>
                 <div>산재 지정 의료 기관</div>

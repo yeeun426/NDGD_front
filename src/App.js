@@ -17,8 +17,8 @@ function App() {
         <Route path="/calc" element={<Calculator />}></Route>
         <Route path="/percent" element={<Percentage />}></Route>
         <Route path="/training" element={<VocationalTraining />}></Route>        
-        <Route path="/rehabilitation" element={<MedicalInstitution />}></Route>
-        <Route path="/job" element={<JobInstitution />}></Route>
+        <Route path="/rehabilitation" element={<JobInstitution />}></Route>
+        <Route path="/medical" element={<MedicalInstitution />}></Route>
       </Routes>
     </div>
   );
