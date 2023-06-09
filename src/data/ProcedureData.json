@@ -29,21 +29,13 @@
             "id" : 4,
             "step" : "step 4",
             "title" : "재해 여부 조사 실시",
-            "category" : {
-                "accident": {
-                    "title" : "사고",
-                    "description" : "공단지사 재활보상부에서 업무상 재해여부 결정"
-                },
-                "disease" : {
-                    "title" : "질병",
-                    "description" : "질병판정위원회 심의"
-                }
-            }
+            "description" : "질병인 경우\nㅤ→ 질병판정위원회 심의\n사고인 경우\nㅤ→ 공단지사 재활보상부에서 업무상 재해여부 결정",
+            "img" : "https://previews.123rf.com/images/simmmax/simmmax1506/simmmax150600045/41672977-%EA%B2%BD%EC%A0%9C-%ED%86%B5%EA%B3%84%EB%A5%BC-%EC%A1%B0%EC%82%AC%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C-%EA%B8%88%EC%9C%B5-%EC%8B%AC%EC%82%AC%EA%B4%80-%EB%B2%A1%ED%84%B0-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%A0%88%EC%9D%B4-%EC%85%98.jpg"
         },
         {
             "id" : 5,
-            "step" : "step 5",
-            "title" : "업무상재해 승인 여부 결정",
+            "num" : "step 5",
+            "numtitle" : "업무상재해 승인 여부 결정",
             "whether" : {
                 "yes" : {
                     "title":"승인 시",

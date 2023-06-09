@@ -26,6 +26,7 @@ export default function Procedure() {
                         <img src={procedure.img} alt=""/>
                     </div>
                     }
+                    {procedure.step &&
                     <div className = "procedure-txt"> 
                         <span className = "procedure-txt-step">{procedure.step} : </span>
                         <span>{procedure.title}</span>
@@ -39,8 +40,17 @@ export default function Procedure() {
                         { procedure.click && 
                         <Link to = {procedure.click.link}>
                             <button>{procedure.click.name}</button>
-                        </Link>}
-                        {procedure.whether && 
+                        </Link>
+                        }
+                    </div>
+                    }
+
+                    {procedure.whether && 
+                        <div className="procedure-step5">
+                            <div className="procedure-txt-center">
+                                <span className = "procedure-txt-step">{procedure.num} : </span>
+                                <span>{procedure.numtitle}</span>
+                            </div>
                             <div className="procedure-whether">
                                 <div className="pw-items approval">
                                     <div className="pw-items-title">{procedure.whether.yes.title}</div>
@@ -55,8 +65,8 @@ export default function Procedure() {
                                     })}
                                 </div>
                             </div>
+                        </div>
                         }
-                    </div>
                 </div>
                     : // 짝수 step
                 <div className = "procedure-contents" style={{"background" : "#F5F5F5"}}>
@@ -66,7 +76,7 @@ export default function Procedure() {
                         <div className = "procedure-txt-sub">
                         {procedure.description && procedure.description.split("\n").map(line => {
                             return (
-                                <div>{line}</div>
+                                <div className="procedure-txt-subtxt">{line}</div>
                             )
                         })}
                         </div>
@@ -78,18 +88,6 @@ export default function Procedure() {
                     {procedure.img && 
                     <div className="procedure-img">
                         <img src={procedure.img} alt=""/>
-                    </div>
-                    }
-                    {procedure.category && 
-                    <div className="procedure-execute">
-                        <div className="pe-items">
-                            <div>{procedure.category.disease.title}</div>
-                            <div>{procedure.category.disease.description}</div>
-                        </div>
-                        <div className="pe-items">
-                            <div>{procedure.category.accident.title}</div>
-                            <div>{procedure.category.accident.description}</div>
-                        </div>                    
                     </div>
                     }
                 </div>

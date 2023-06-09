@@ -34,14 +34,6 @@ export const ProcedureStyled = styled.div `
             padding: 5px 0;
         }
 
-        .procedure-txt-step {
-            font-weight: bold;
-        }
-
-        span {
-            font-size : 20px;
-        }
-
         button {
             font-size: 16px;
             background: rgb(255, 135, 0);
@@ -53,25 +45,48 @@ export const ProcedureStyled = styled.div `
         }
     }
 
+    .procedure-txt-step {
+        font-weight: bold;
+    }
+
+    span {
+        font-size : 20px;
+    }
+
     .procedure-whether {
         display: flex;
         gap: 120px;
         width: max-content;
 
-        .pw-items.approval {
-            background: palegreen;
-            padding: 10px;
+        .pw-items {
+            background: rgb(245, 245, 245);
+            padding: 25px;
             align-self: center;
+            line-height: 1.5;
+            border-radius: 30px;
+        }
+
+        .pw-items.approval {
+            border: 4px solid #8BC34A;
         }
 
         .pw-items.disapproval {
-            background: palegreen;
-            padding: 10px;
-            align-self: center;
+            border: 4px solid rgb(255 122 144);
         }
 
         .pw-items-title {
             text-align: center;
+            font-weight: bold;
+            font-size: 19px;
         }
+    }
+
+    .procedure-step5 {
+        width: max-content;
+    }
+
+    .procedure-txt-center {
+        text-align: center;
+        padding-bottom: 15px;
     }
 `
