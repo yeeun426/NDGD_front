@@ -33,7 +33,7 @@ export default function Procedure() {
                         <div className = "procedure-txt-sub">
                         {procedure.description && procedure.description.split("\n").map(line => {
                             return (
-                                <div className="procedure-txt-subtxt">{line}</div>
+                                <div key={line.id} className="procedure-txt-subtxt">{line}</div>
                             )
                         })}
                         </div>
@@ -60,7 +60,7 @@ export default function Procedure() {
                                     <div className="pw-items-title">{procedure.whether.no.title}</div>
                                     {procedure.whether.no.description.split("\n").map(line => {
                                         return(
-                                            <div className="pw-items-description">{line}</div>
+                                            <div key = {line.id} className="pw-items-description">{line}</div>
                                         )
                                     })}
                                 </div>
@@ -76,7 +76,7 @@ export default function Procedure() {
                         <div className = "procedure-txt-sub">
                         {procedure.description && procedure.description.split("\n").map(line => {
                             return (
-                                <div className="procedure-txt-subtxt">{line}</div>
+                                <div key={line.id} className="procedure-txt-subtxt">{line}</div>
                             )
                         })}
                         </div>
