@@ -16,7 +16,9 @@ export default function Header() {
             <div>공지사항</div>
             <div>커뮤니티</div>
             <div>사용 후기</div>
-            <div>로그인/회원가입</div>
+            <Link to="/login">
+              <div>로그인/회원가입</div>
+            </Link>
           </div>
         </div>
       </HeaderStyled>

@@ -7,6 +7,7 @@ import Percentage from './pages/Percentage';
 import VocationalTraining from './pages/VocationalTraining';
 import MedicalInstitution from './pages/MedicalInstitution';
 import JobInstitution from './pages/JobInstitution';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
         <Route path="/training" element={<VocationalTraining />}></Route>        
         <Route path="/rehabilitation" element={<JobInstitution />}></Route>
         <Route path="/medical" element={<MedicalInstitution />}></Route>
+      
+        <Route path="/login" element={<Login />}></Route>
+
       </Routes>
     </div>
   );
