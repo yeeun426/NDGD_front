@@ -70,4 +70,45 @@ export const AgencyStyled = styled.div `
 `
 
 export const TrainingStyled = styled.div `  
+    .training-list {
+        border-radius: 10px;
+        z-index: 100;
+        position: absolute;
+        top: 35%;
+        left: 11%;
+        background: #ffffff8c;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .job-name {
+        font-size: 18px;
+    }
+
+    .job-address {
+        font-size: 15px;
+        color: #6a6969;
+    }
+
+    .job-best {
+        img {
+            width: 45px;
+            height: 45px;
+        }
+    }
+
+    .job-txt {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .training-list-items {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+    }
 `
