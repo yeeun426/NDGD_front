@@ -12,6 +12,7 @@ button {
   border: none;
   font-family: 'Pretendard-Thin';
   cursor: pointer;
+  background: none;
 }
 
 @font-face {

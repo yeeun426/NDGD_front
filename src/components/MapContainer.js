@@ -3,13 +3,13 @@ import jobData from "../data/JobInstitutionData.json"
 
 const { kakao } = window;
 
-const MapContainer = () => {
+const MapContainer = ({center, isPanto, level}) => {
 
     useEffect(() => {
         const container = document.getElementById('myMap');
 		const options = {
-			center: new kakao.maps.LatLng(36.3, 127.5),
-			level: 12
+			center: new kakao.maps.LatLng(center.lat, center.lng),
+			level: level
 		};
         const map = new kakao.maps.Map(container, options);
 
@@ -47,7 +47,7 @@ const MapContainer = () => {
             };
         }
 
-    }, []);
+    }, [center, isPanto, level]);
 
 
     return (

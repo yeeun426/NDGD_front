@@ -110,5 +110,6 @@ export const TrainingStyled = styled.div `
         flex-direction: row;
         gap: 10px;
         align-items: center;
+        text-align: left;
     }
 `
