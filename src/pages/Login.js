@@ -2,6 +2,10 @@ import React,{useEffect, useState} from 'react'
 
 import { useNavigate } from 'react-router-dom';
 import { ModalOverlayStyle, LoginStyle, SnsLoginStyle } from "../styles/LoginStyled";
+import axios from "axios";
+window.Axios = axios. create({  //서버와 통신할 axios객체 전역으로 선언
+	baseURL : "http://127.0.0.1:8000/"
+})
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -57,14 +61,33 @@ export default function LoginPage() {
 
   const navigate = useNavigate();
   const [user, setUser] = useState('');
+
   //회원가입
   const ClickSingup = () => {
     alert("성공")
+    const userData = {  //value부분에 user가 입력한 값 들어가야 함(test 데이터임)
+      email: "test10@naver.com",
+      password1: "1q2w3e4r!",
+      password2: "1q2w3e4r!"
+  };
+    window.Axios.post("accounts/registration/", userData)
+    .then(function(response){
+      console.log(response);
+    });
   }
 
   // email 확인
   const onClickEmail = () => {
     alert("이메일 확인")
+    const userData = {  //value부분에 user가 입력한 값 들어가야 함(test 데이터임)
+      email: "test10@naver.com",
+      password: "1q2w3e4r!"
+  };
+  window.Axios.post("accounts/login/", userData)
+    .then(function(response){
+      window.Axios.defaults.headers.common['Authorization'] = `Token ${response.data["key"]}`
+      alert(response.data["key"]);  //key잘 넘어오나 test 삭제해도 됨
+    });
   };
 
   //카카오 로그인

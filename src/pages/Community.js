@@ -4,6 +4,17 @@ import PageTitle from "../components/PageTitle";
 import { CommunityStyled } from "../styles/CommunityStyled";
 
 export default function Community() {
+    const onPost = () => {  //현재 버튼누르면 바로 data가 포스트 되도록 되어있는데 user한테 내용 입력받아서 이 버튼 누르면 포스트 되도록 수정 해야할 듯
+        alert("포스팅 하기")
+        const userData = {
+          title: "testpost2",
+          body: "testpost2"
+      };
+      window.Axios.post("board/blog/", userData)
+        .then(function(response){
+          alert("포스트완료");
+        });
+      };
     return(
         <CommunityStyled>
             <Header />
@@ -119,7 +130,9 @@ export default function Community() {
 
                     </div>
                 </div>
+                <button id="postBtn" onClick={onPost}>포스팅하기(test)</button>     //임시 포스팅 버튼
             </div>
+
         </CommunityStyled>
     )
 }
