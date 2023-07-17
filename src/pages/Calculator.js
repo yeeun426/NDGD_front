@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import PageTitle from "../components/PageTitle";
 import { CalculatorStyled } from "../styles/CalculatorStyled";
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 export default function Procedure() {
     const [formData, setFormData] = useState({
@@ -23,8 +24,15 @@ export default function Procedure() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        const config = {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        };
+
+        const data = new URLSearchParams(formData).toString();
         
-        window.Axios.post('/receipt predictions/api/', formData)
+        axios.post('http://127.0.0.1:8000/receipt_predictions/api/', data, config)
             .then(response => {
                 // 성공적으로 요청을 처리한 후 수행할 작업
                 console.log(response.data);
@@ -110,7 +118,7 @@ export default function Procedure() {
                     </div>
                     <div className="calc-items">
                         <div className="calc-items-name">업장 인력 규모</div>
-                        <select name="region" value={formData.scale} onChange={handleChange}>
+                        <select name="scale" value={formData.scale} onChange={handleChange}>
                             <option value="건 설 업">건 설 업</option>
                             <option value="5인미만">5인미만</option>
                             <option value="5 ~ 29인">5 ~ 29인</option>
