@@ -77,7 +77,13 @@ export default function LoginPage() {
         setSignup(false);
       })
       .catch((error) => {
-        debugger
+        const key = Object.keys(error.response.data);
+        if (key=='email'){
+          alert('중복된 아이디가 존재합니다.')
+        }
+        else if (key=='non_field_errors'){
+          alert('두 비밀번호가 일치하지 않습니다.')
+        }
       })
     }
   //   const userData = {  //value부분에 user가 입력한 값 들어가야 함(test 데이터임)
@@ -95,11 +101,12 @@ export default function LoginPage() {
   const onClickLogin = (e) => {
     e.preventDefault();
 
-    window.Axios.post("accounts/login", {
+    window.Axios.post("accounts/login/", {
       email : email,
       password : password,
     })
     .then((res) => {
+      window.Axios.defaults.headers.common['Authorization'] = `Token ${res.data["key"]}`
       console.log(res)
       console.log(res.data)
       alert(email + "님 반갑습니다.")
