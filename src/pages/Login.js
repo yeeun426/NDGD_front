@@ -23,6 +23,8 @@ export default function LoginPage() {
   const [infoCheck, setInfoCheck] = useState(false);
   const [marketingCheck, setMarketingCheck] = useState(false);
 
+  let localStorage = window.localStorage;
+
   const allBtnEvent = () => {
     if(allCheck === false) {
       setAllCheck(true);
@@ -109,6 +111,8 @@ export default function LoginPage() {
       window.Axios.defaults.headers.common['Authorization'] = `Token ${res.data["key"]}`
       console.log(res)
       console.log(res.data)
+      localStorage.setItem("email", email);
+
       alert(email + "님 반갑습니다.")
       navigate("/", {replace: true});
     })

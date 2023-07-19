@@ -41,5 +41,9 @@ export const HeaderStyled = styled.div `
         display: flex;
         gap: 40px;
         font-size: 18px;
+
+        button {
+            font-size : 18px;
+        }
     }
 `

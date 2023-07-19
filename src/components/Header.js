@@ -3,6 +3,11 @@ import { HeaderStyled } from "../styles/ComponentsStyled";
 import { Link } from 'react-router-dom';
 
 export default function Header() {
+  const handleLogout = () => {
+    localStorage.removeItem("email");
+    document.location.href = '/'
+  }
+
     return (
       <HeaderStyled>
         <Link to ="/">
@@ -20,9 +25,16 @@ export default function Header() {
             <Link to = "/review">
               <div>사용 후기</div>
             </Link>
+            {localStorage.length
+            ?
+            <button onClick = {handleLogout}>
+              로그아웃
+            </button>
+            :
             <Link to="/login">
               <div>로그인/회원가입</div>
             </Link>
+            }
           </div>
         </div>
       </HeaderStyled>
