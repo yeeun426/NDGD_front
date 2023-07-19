@@ -10,6 +10,7 @@ import JobInstitution from './pages/JobInstitution';
 import Login from './pages/Login';
 import Community from './pages/Community';
 import Review from './pages/Review';
+import WritingPost from './pages/WritingPost';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/medical" element={<MedicalInstitution />}></Route>
         <Route path="/community" element={<Community />}></Route>
         <Route path="/review" element={<Review />}></Route>
+        <Route path="/post" element={<WritingPost />}></Route>
 
         <Route path="/login" element={<Login />}></Route>
 

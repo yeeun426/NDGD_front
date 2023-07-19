@@ -1,8 +1,20 @@
 import styled from "styled-components";
 
 export const CommunityStyled = styled.div `
+    
     .ci-txt {
         width: 280px;
+    }
+
+    .community-btn {
+        position: absolute;
+        top: 17%;
+        right: 21%;
+        font-size: 17px;
+        padding: 8px 27px;
+        background: #ff8700;
+        color: white;
+        border-radius: 13px;
     }
 
     .community-img {
@@ -24,11 +36,11 @@ export const CommunityStyled = styled.div `
     }
 
     .community-wrapper {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
         place-content: center;
         margin: 20px 0px;
-        padding: 0 200px;
+        padding: 0px 320px;
+        grid-template-columns: 1fr 1fr;
     }
 
     .ci-contents {
