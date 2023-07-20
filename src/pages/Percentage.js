@@ -47,10 +47,9 @@ export default function Percentage() {
         <CalculatorStyled>
             <Header />
             <PageTitle title="AI Possibility Prediction" txt = "4대 보험금 모의 계산기입니다."/>
-            <div className="calc-wrapper">
+            <form className="calc-wrapper" onSubmit={handleSubmit}>
                 <div className="calc-txt">재해 발생 당시 정보와 현재 본인의 상황을 입력해주세요.</div>
-                <div className="calc-contents">
-                <form onSubmit={handleSubmit}>
+                <div className="calc-contents" >
                     <div className="calc-items">
                         <div className="calc-items-name">업종</div>
                         <select name="workType" value={formData.workType} onChange={handleChange}>
@@ -116,16 +115,18 @@ export default function Percentage() {
                             <option value="1,000인 이상">1,000인 이상</option>
                         </select>
                     </div>
-                <button type="submit">완 료</button>
-                </form>
                 </div>
                 
+                { percentage ?
                 <div className="calc-result">
                     <h2>승인 확률</h2>
-                    <span className="calc-price">{percentage}</span>
-                    <span className="calc-unit"> % </span>
+                    <div className="calc-price">{percentage} %</div>
+                    <button className = "calc-rebtn" type="submit">다시 계산하기</button>
                 </div>
-            </div>
+                :
+                <button className = "calc-btn" type="submit">확률 계산하기</button>
+                }
+            </form>
 
             <div className="calc-buttons">
                 <Link to="/procedure">
