@@ -1,106 +1,52 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Header from "../components/Header";
 import PageTitle from "../components/PageTitle";
 import { CommunityStyled } from "../styles/CommunityStyled";
+import { Link } from 'react-router-dom';
+import axios from "axios";
 
 export default function Review() {
+    const [reviewList, setReviewList] = useState([]);
+
+    useEffect(() => {
+        axios.get("http://127.0.0.1:8000/review/review/")
+        .then((res) => {
+            setReviewList(res.data.reverse());
+        })
+        .catch((error) => {
+            alert(error);
+        })
+    },[])   
+
     return(
         <CommunityStyled>
             <Header />
-            <PageTitle title="Review(사용 후기)" txt = "다양한 후기를 통해 NDGD의 정확도를 확인해보세요!"/>
+            <PageTitle title="Review (사용 후기)" txt = "다양한 후기를 통해 NDGD의 정확도를 확인해보세요!"/>
+            {localStorage.length ?
+            <Link to = "/writing"><button className = "community-btn">글쓰기</button></Link>
+            : <Link to = "/login"><button className = "community-btn">글쓰기</button></Link>
+            }
             <div className = "community-wrapper">
-                <div className = "community-items">
+                {reviewList.map((review) => (
+                <div className = "community-items" key = {review.id}>
                     <div className = "ci-txt">
+                        <div className = "ci-title">
+                                {review.title}
+                        </div>
                         <div className = "ci-contents">
-                            리뷰 내용
+                            {review.title}
                         </div>
 
                         <div className = "ci-comment">
-                            <span>댓글</span>
-                            <span>3</span>
+                            <span>{review.user}</span>
                         </div>   
+                        <span>{review.created_at.slice(0,10)}</span>
                     </div>
                     <div className = "review-percent">
-                        80%
+                        {review.percentage}%
                     </div>
                 </div>
-                <div className = "community-items">
-                    <div className = "ci-txt">
-                        <div className = "ci-contents">
-                            리뷰 내용
-                        </div>
-
-                        <div className = "ci-comment">
-                            <span>댓글</span>
-                            <span>3</span>
-                        </div>   
-                    </div>
-                    <div className = "review-percent">
-                        78%
-                    </div>
-                </div>
-                <div className = "community-items">
-                    <div className = "ci-txt">
-                        <div className = "ci-contents">
-                            리뷰 내용
-                        </div>
-
-                        <div className = "ci-comment">
-                            <span>댓글</span>
-                            <span>3</span>
-                        </div>   
-                    </div>
-                    <div className = "review-percent">
-                        60%
-                    </div>
-                </div>
-                <div className = "community-items">
-                    <div className = "ci-txt">
-                        <div className = "ci-contents">
-                            리뷰 내용
-                        </div>
-
-                        <div className = "ci-comment">
-                            <span>댓글</span>
-                            <span>3</span>
-                        </div>   
-                    </div>
-                    <div className = "review-percent">
-                        70%
-                    </div>
-                </div>
-
-                <div className = "community-items">
-                    <div className = "ci-txt">
-                        <div className = "ci-contents">
-                            리뷰 내용
-                        </div>
-
-                        <div className = "ci-comment">
-                            <span>댓글</span>
-                            <span>3</span>
-                        </div>   
-                    </div>
-                    <div className = "review-percent">
-                        90%
-                    </div>
-                </div>
-
-                <div className = "community-items">
-                    <div className = "ci-txt">
-                        <div className = "ci-contents">
-                            리뷰 내용
-                        </div>
-
-                        <div className = "ci-comment">
-                            <span>댓글</span>
-                            <span>3</span>
-                        </div>   
-                    </div>
-                    <div className = "review-percent">
-                        80%
-                    </div>
-                </div>
+                ))}
             </div>
         </CommunityStyled>
     )

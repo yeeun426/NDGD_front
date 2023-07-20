@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import Community from './pages/Community';
 import Review from './pages/Review';
 import WritingPost from './pages/WritingPost';
+import WritingReview from './pages/WritingReview';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/community" element={<Community />}></Route>
         <Route path="/review" element={<Review />}></Route>
         <Route path="/post" element={<WritingPost />}></Route>
+        <Route path="/writing" element={<WritingReview />}></Route>
 
         <Route path="/login" element={<Login />}></Route>
 
