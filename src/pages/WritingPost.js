@@ -19,7 +19,19 @@ export default function Community() {
             navigate("/community", {replace: true});
         })
         .catch((error) => {
-            console.log(error);
+            const key = Object.keys(error.response.data);
+            if (key=='detail'){
+                alert("로그인을 하신뒤 게시물을 작성해주세요.")
+            }
+            else if (key=='title,body'){
+                alert("제목과 내용을 입력해주세요.")
+            }
+            else if (key=='title'){
+                alert("제목을 입력해주세요.")
+            }
+            else if (key=='body'){
+                alert("내용을 입력해주세요.")
+            }
         })
         // alert("게시 완료!")
         // const userData = {

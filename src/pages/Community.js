@@ -3,12 +3,13 @@ import Header from "../components/Header";
 import PageTitle from "../components/PageTitle";
 import { CommunityStyled } from "../styles/CommunityStyled";
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 export default function Community() {
     const [contentList, setContentList] = useState([]);
 
     useEffect(() => {
-        window.Axios.get("board/blog/")
+        axios.get("http://127.0.0.1:8000/board/blog/")
         .then((res) => {
             setContentList(res.data.reverse());
         })
