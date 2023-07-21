@@ -22,10 +22,13 @@ export default function Community() {
         <CommunityStyled>
             <Header />
             <PageTitle title="Community (커뮤니티)" txt = "다양한 정보를 공유해요!"/>
+            {localStorage.length ?
             <Link to = "/post"><button className = "community-btn">글쓰기</button></Link>
+            : <Link to = "/post"><button className = "community-btn">글쓰기</button></Link>
+            }
             <div className = "community-wrapper">
                 {contentList.map((content) => (
-                    <div className = "community-items">
+                    <div className = "community-items" key = {content.id}>
                         <div className = "ci-txt">
                             <div className = "ci-title">
                                 {content.title}

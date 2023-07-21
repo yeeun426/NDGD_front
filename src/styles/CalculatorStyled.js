@@ -8,6 +8,9 @@ export const CalculatorStyled = styled.div `
         margin: 30px auto 60px;        
         padding: 20px 60px;
         box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
     }
     
     .calc-txt {
@@ -25,15 +28,15 @@ export const CalculatorStyled = styled.div `
 
     .calc-items {
         display: flex;
-        gap: 30px;
+        gap: 15px;
         font-size: 21px;
         align-items: center;
 
         .calc-items-name {
-            width: 100px;
+            width: 155px;
         }
 
-        select {
+        input, select {
             font-size: 18px;
             padding: 15px;
             width: 100%;
@@ -50,14 +53,38 @@ export const CalculatorStyled = styled.div `
         padding: 20px 0;
     }
 
+
+    .calc-btn {
+        border: 2px solid rgb(255 135 0);
+        border-radius: 80px;
+        width: 40%;
+        padding: 28px 20px;
+        margin: 25px auto;
+        text-align: center;
+        position: relative;
+        font-size: 20px;
+        color: rgb(225 135 0);
+        font-weight: bold;
+        box-shadow: 5px 5px 10px #808080b5;
+    }
+
     .calc-result {
         border: 2px solid rgb(187, 187, 187);
         border-radius: 80px;
         width: 40%;
-        padding: 45px 20px;
+        padding: 35px 20px;
         margin: 25px auto auto;
         text-align: center;
         position: relative;
+
+        .calc-rebtn {
+            font-size: 16px;
+            padding: 8px 30px;
+            border-radius: 25px;
+            color: #ff8700;
+            font-weight: bold;
+            border: 1px solid #ff8700;
+        }
 
         h2 {
             font-weight: bolder;

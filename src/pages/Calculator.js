@@ -41,7 +41,6 @@ export default function Procedure() {
             .catch(error => {
                 // 요청 실패에 대한 처리
                 console.error(error);
-                
             });
     };
 
@@ -49,10 +48,9 @@ export default function Procedure() {
         <CalculatorStyled>
             <Header />
             <PageTitle title="AI Calculator" txt = "4대 보험금 모의 계산기입니다."/>
-            <div className="calc-wrapper">
+            <form className="calc-wrapper" onSubmit={handleSubmit}>
                 <div className="calc-txt">재해 발생 당시 정보와 현재 본인의 상황을 입력해주세요.</div>
                 <div className="calc-contents">
-                <form onSubmit={handleSubmit}>
                     <div className="calc-items">
                         <div className="calc-items-name">급여 종류</div>
                         <select name="paidType" value={formData.paidType} onChange={handleChange}>
@@ -93,6 +91,7 @@ export default function Procedure() {
                           name="occurrenceType"
                           value={formData.occurrenceType}
                           onChange={handleChange}
+                          placeholder="발생 형태를 입력해주세요."
                         />
 
                     </div>
@@ -104,6 +103,7 @@ export default function Procedure() {
                           name="workname"
                           value={formData.workname}
                           onChange={handleChange}
+                          placeholder="업종명을 입력해주세요."
                         />
                     </div>
                     <div className="calc-items">
@@ -113,6 +113,7 @@ export default function Procedure() {
                           name="illness"
                           value={formData.illness}
                           onChange={handleChange}
+                          placeholder="병명을 입력해주세요."
                         />
 
                     </div>
@@ -130,16 +131,19 @@ export default function Procedure() {
                             <option value="1,000인 이상">1,000인 이상</option>
                         </select>
                     </div>
-                <button type="submit">완 료</button>
-                </form>
                 </div>
                 
+                {calcPrice ?
                 <div className="calc-result">
                     <h2>수령 가능 보험료</h2>
-                    <span className="calc-price">{calcPrice}</span>
+                    <span className="calc-price">{calcPrice} 원</span>
                     <span className="calc-unit"> 원</span>
+                    <button className = "calc-rebtn" type="submit">다시 계산하기</button>
                 </div>
-            </div>
+                :
+                <button className = "calc-btn" type="submit">수령 가능 보험료 계산하기</button>
+                }
+            </form>
 
             <div className="calc-buttons">
                 <Link to="/procedure">
