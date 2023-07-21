@@ -86,6 +86,9 @@ export default function LoginPage() {
         else if (key=='non_field_errors'){
           alert('두 비밀번호가 일치하지 않습니다.')
         }
+        else if (key=='password1'){
+          alert('비밀번호의 보안성이 너무 낮습니다. 다른 비밀번호를 입력해주세요.')
+        }
       })
     }
   //   const userData = {  //value부분에 user가 입력한 값 들어가야 함(test 데이터임)
