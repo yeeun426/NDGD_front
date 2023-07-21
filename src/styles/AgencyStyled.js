@@ -16,6 +16,13 @@ export const AgencyStyled = styled.div `
             background: #D9D9D9;
             width: 70%;
             height: 50px;
+            font-size: 19px;
+            font-family: 'Pretendard-Thin';
+        }
+
+        img {
+            width: 35px;
+            margin: -10px;
         }
     }
 
