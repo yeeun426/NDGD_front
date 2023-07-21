@@ -139,8 +139,7 @@ export default function Procedure() {
                 {calcPrice ?
                 <div className="calc-result">
                     <h2>수령 가능 보험료</h2>
-                    <span className="calc-price">{calcPrice} 원</span>
-                    <span className="calc-unit"> 원</span>
+                    <div className="calc-price">{calcPrice} 원</div>
                     <button className = "calc-rebtn" type="submit">다시 계산하기</button>
                 </div>
                 :
