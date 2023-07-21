@@ -38,9 +38,12 @@ export default function Procedure() {
                 console.log(response.data);
                 setCalcPrice(response.data.result); // 수령 가능 보험료 상태 업데이트
             })
-            .catch(error => {
+            .catch((error) => {
                 // 요청 실패에 대한 처리
-                console.error(error);
+                const key = Object.keys(error.response.data);
+                if (key=='error'){
+                    alert(error.response.data[key]+" 항목을 변경해주세요.")
+                }
             });
     };
 
