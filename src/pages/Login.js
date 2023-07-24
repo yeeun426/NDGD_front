@@ -25,6 +25,12 @@ export default function LoginPage() {
 
   let localStorage = window.localStorage;
 
+  const handleEnter = (e) => {
+    if(e.key === 'Enter') {
+      onClickLogin(e)
+    }
+  }
+
   const allBtnEvent = () => {
     if(allCheck === false) {
       setAllCheck(true);
@@ -184,6 +190,7 @@ export default function LoginPage() {
               placeholder="이메일을 입력해 주세요." 
               value={email} 
               onChange={handleEmail}
+              onKeyDown={handleEnter}
               />
             <div className="error-message">
               { !emailValid && email.length > 0 && (
@@ -197,6 +204,7 @@ export default function LoginPage() {
             <input 
               type="password" 
               placeholder="비밀번호" 
+              onKeyDown={handleEnter}
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value)
