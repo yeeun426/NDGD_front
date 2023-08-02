@@ -10,6 +10,7 @@ import JobInstitution from './pages/JobInstitution';
 import Login from './pages/Login';
 import Community from './pages/Community';
 import Review from './pages/Review';
+import ReviewDetail from './pages/ReviewDetail';
 import WritingPost from './pages/WritingPost';
 import WritingReview from './pages/WritingReview';
 
@@ -25,7 +26,10 @@ function App() {
         <Route path="/rehabilitation" element={<JobInstitution />}></Route>
         <Route path="/medical" element={<MedicalInstitution />}></Route>
         <Route path="/community" element={<Community />}></Route>
+        
         <Route path="/review" element={<Review />}></Route>
+        <Route path="/review/:id" element={<ReviewDetail/>}></Route>
+
         <Route path="/post" element={<WritingPost />}></Route>
         <Route path="/writing" element={<WritingReview />}></Route>
 

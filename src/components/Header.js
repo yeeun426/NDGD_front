@@ -12,7 +12,7 @@ export default function Header() {
       <HeaderStyled>
         <Link to ="/">
           <div className = "header-left">
-            <img src = "images/logo.png" alt="NDGD"/>
+            <img src = {process.env.PUBLIC_URL + '/images/logo.png'} alt="NDGD"/>
           </div>
         </Link>
         

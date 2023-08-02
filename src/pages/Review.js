@@ -28,10 +28,10 @@ export default function Review() {
             }
             <div className = "community-wrapper">
                 {reviewList.map((review) => (
-                <div className = "community-items" key = {review.id}>
+                <Link to = {`/review/${review.id}`} state = {{review:review}}className = "community-items" key = {review.id}>
                     <div className = "ci-txt">
                         <div className = "ci-title">
-                                {review.title}
+                            {review.title}
                         </div>
                         <div className = "ci-contents">
                             {review.title}
@@ -45,7 +45,7 @@ export default function Review() {
                     <div className = "review-percent">
                         {review.percentage}%
                     </div>
-                </div>
+                </Link>
                 ))}
             </div>
         </CommunityStyled>

@@ -29,6 +29,7 @@ export const CommunityStyled = styled.div `
         border-bottom: 1px solid #BDBDBD;
         height: 240px;
         box-sizing: border-box;
+        text-align: left;
 
         span {
             padding-right: 10px;
