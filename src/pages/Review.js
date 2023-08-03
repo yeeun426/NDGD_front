@@ -34,7 +34,7 @@ export default function Review() {
                             {review.title}
                         </div>
                         <div className = "ci-contents">
-                            {review.title}
+                            {review.body}
                         </div>
 
                         <div className = "ci-comment">

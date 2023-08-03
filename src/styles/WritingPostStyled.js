@@ -48,4 +48,36 @@ export const WritingPostStyled = styled.div `
         color: white;
         border-radius: 5px;
     }
+
+    .post-admin {
+        gap: 41px;
+        display: flex;
+
+        button {
+            border: 2px solid #ff8739;
+            font-size: 16px;
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            color: #ff8739;
+            font-weight: bold;        
+        }
+    }
+
+    .post-admin-complete {
+        width: 350px !important;
+    }
+
+    .post-list-btn {
+        background: rgb(255, 135, 57);
+        font-size: 16px;
+        height: 40px;
+        width: 350px;
+        border-radius: 10px;
+        color: white;
+        display: flex;
+        font-weight: bold;
+        align-items: center;
+        justify-content: center;   
+    }
 `
