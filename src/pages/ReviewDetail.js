@@ -1,17 +1,38 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Header from "../components/Header";
 import PageTitle from "../components/PageTitle";
 import { WritingPostStyled } from "../styles/WritingPostStyled";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function ReviewDetail(props) {
     const {id} = useParams();
 
-    const location = useLocation();
-    const review = location.state.review;
+    const navigate = useNavigate();
+    const [detail, setDetail] = useState([]);
 
-    console.log(review);
-    console.log(id);
+    const handleDelete = () => {
+        window.Axios.delete(`review/review/${id}`)
+        .then((res) => {
+            alert("삭제 완료");
+            navigate("/review", {replace: true})
+        })
+        .catch((error) => {
+            debugger
+        })
+    }
+
+    useEffect(() => {
+        axios.get(`http://127.0.0.1:8000/review/review/${id}`)
+        .then((res) => {
+            setDetail(res.data);
+        })
+        .catch((error) => {
+            alert(error);
+        })
+    },[])    
+
+    console.log(detail);
     
     return(
         <WritingPostStyled>
@@ -21,27 +42,52 @@ export default function ReviewDetail(props) {
                 <div className = "post-contents">
                     <div className = "post-items">
                         <span>제목</span>
-                        <div>
-                            {review.title}
-                        </div>
+                        <input
+                        value = {detail.title}
+                        disabled
+                        />
                     </div>
                     <div className = "post-items">
                         <span>정확도</span>
-                        <span>{review.percentage}%</span>
+                        <input
+                            value = {detail.percentage + "%"}
+                            disabled
+                        />
                     </div>
                     <div className = "post-items">
                         <span>등록자</span>
-                        <span>{review.user}</span>
+                        <input
+                            value = {detail.user}
+                            disabled
+                        />
                     </div>
                     <div className = "post-items">
                         <span>등록일</span>
-                        <span>{review.created_at.slice(0,10)}</span>
+                        <input
+                            value = {detail.created_at && detail.created_at.slice(0,10)}
+                            disabled
+                        />
                     </div>
                     <div className = "post-items">
                         <span>내용</span>
-                        <div>{review.body}</div>
+                        <textarea
+                            className="pi-contents"
+                            value = {detail.body}
+                            disabled
+                        />                    
                     </div>
                 </div>
+                {localStorage.getItem("email") === detail.user
+                &&
+                <>
+                <button>
+                    수정하기
+                </button>
+                <button onClick = {handleDelete}>
+                    삭제
+                </button>
+                </>
+                }
             </div>
         </WritingPostStyled>
     )
