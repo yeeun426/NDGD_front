@@ -5,7 +5,7 @@ import { WritingPostStyled } from "../styles/WritingPostStyled";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
-export default function ReviewDetail(props) {
+export default function CommunityDetail() {
     const {id} = useParams();
 
     const navigate = useNavigate();
@@ -13,10 +13,10 @@ export default function ReviewDetail(props) {
     const [edit, setEdit] = useState(false);
 
     const handleDelete = () => {
-        window.Axios.delete(`review/review/${id}`)
+        window.Axios.delete(`board/blog/${id}`)
         .then((res) => {
             alert("삭제 완료");
-            navigate("/review", {replace: true})
+            navigate("/community", {replace: true})
         })
         .catch((error) => {
             alert(error);
@@ -25,19 +25,16 @@ export default function ReviewDetail(props) {
 
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
-    const [percentage, setPercentage] = useState();
-
 
     const handleEdit = () => {
-        window.Axios.put(`review/review/${id}/`, {
+        window.Axios.put(`board/blog/${id}/`, {
             title: title,
             body : body,
-            percentage : percentage,
         })
         .then((res) => {
             alert("게시글이 수정되었습니다.");
             setEdit(false);
-            navigate(`/review/${id}/`, {replace:true})
+            navigate(`/community/${id}/`, {replace:true})
         })
         .catch((err) => {
             alert(err);
@@ -45,13 +42,12 @@ export default function ReviewDetail(props) {
     }
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/review/review/${id}`)
+        axios.get(`http://127.0.0.1:8000/board/blog/${id}`)
         .then((res) => {
             setDetail(res.data);
             
             setTitle(res.data.title);
             setBody(res.data.body);
-            setPercentage(res.data.percentage);
         })
         .catch((error) => {
             alert(error);
@@ -63,7 +59,7 @@ export default function ReviewDetail(props) {
     return(
         <WritingPostStyled>
             <Header />
-            <PageTitle title="Review (사용 후기)" txt = "우리가 경험한 NDGD를 공유해요!"/>
+            <PageTitle title="Community (커뮤니티)" txt = "다양한 정보를 공유해요!"/>
             <div className = "post-wrapper">
                 <div className = "post-contents">
                     <div className = "post-items">
@@ -81,26 +77,6 @@ export default function ReviewDetail(props) {
                                 setTitle(e.target.value)
                             }}
                         />
-                        }
-                    </div>
-                    <div className = "post-items">
-                        <span>정확도</span>
-                        { !edit ?
-                        <input
-                            value = {percentage + "%"}
-                            disabled
-                        />
-                        :
-                        <>
-                            <input
-                                value = {percentage}
-                                type = "range"
-                                onChange={(e) => {
-                                    setPercentage(e.target.value)
-                                }}
-                            />
-                            <span>{percentage} %</span>
-                        </>
                         }
                     </div>
                     <div className = "post-items">
@@ -157,7 +133,7 @@ export default function ReviewDetail(props) {
                         }
                     </div>
                 }
-                <Link to = "/review" className = "post-list-btn">다른 리뷰 확인하기</Link>
+                <Link to = "/community" className = "post-list-btn">다른 글 확인하기</Link>
             </div>
         </WritingPostStyled>
     )

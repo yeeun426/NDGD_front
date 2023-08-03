@@ -28,7 +28,7 @@ export default function Community() {
             }
             <div className = "community-wrapper">
                 {contentList.map((content) => (
-                    <div className = "community-items" key = {content.id}>
+                    <Link to = {`/community/${content.id}`} className = "community-items" key = {content.id}>
                         <div className = "ci-txt">
                             <div className = "ci-title">
                                 {content.title}
@@ -42,7 +42,7 @@ export default function Community() {
                             </div>   
                             <span>{content.created_at.slice(0,10)}</span>
                         </div>
-                    </div>
+                    </Link>
                 ))}
                 {/* <button id="postBtn" onClick={onPost}>포스팅하기(test)</button>     //임시 포스팅 버튼 */}
             </div>

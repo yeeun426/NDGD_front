@@ -28,7 +28,7 @@ export default function Review() {
             }
             <div className = "community-wrapper">
                 {reviewList.map((review) => (
-                <Link to = {`/review/${review.id}`} state = {{review:review}}className = "community-items" key = {review.id}>
+                <Link to = {`/review/${review.id}`} className = "community-items" key = {review.id}>
                     <div className = "ci-txt">
                         <div className = "ci-title">
                             {review.title}

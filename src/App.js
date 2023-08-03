@@ -9,6 +9,7 @@ import MedicalInstitution from './pages/MedicalInstitution';
 import JobInstitution from './pages/JobInstitution';
 import Login from './pages/Login';
 import Community from './pages/Community';
+import CommunityDetail from './pages/CommunityDetail';
 import Review from './pages/Review';
 import ReviewDetail from './pages/ReviewDetail';
 import WritingPost from './pages/WritingPost';
@@ -25,7 +26,9 @@ function App() {
         <Route path="/training" element={<VocationalTraining />}></Route>        
         <Route path="/rehabilitation" element={<JobInstitution />}></Route>
         <Route path="/medical" element={<MedicalInstitution />}></Route>
+        
         <Route path="/community" element={<Community />}></Route>
+        <Route path="/community/:id" element={<CommunityDetail />}></Route>
         
         <Route path="/review" element={<Review />}></Route>
         <Route path="/review/:id" element={<ReviewDetail/>}></Route>
